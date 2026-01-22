@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Sacola - Magalu</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Reset e Globais --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            /* overflow-x: hidden removido para garantir que position: sticky funcione perfeitamente */
+            padding-bottom: 20px;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Navbar (Estilo Magalu) --- */
+        .navbar-custom { background-color: #0086ff; }
+        
+        .search-input { 
+            border-radius: 8px; 
+            padding: 12px; 
+            width: 100%; 
+            border: none; 
+            font-size: 0.9rem;
+        }
+        
+        .navbar-brand { letter-spacing: -1px; }
+
+        /* --- Layout Sacola --- */
+        .page-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin: 25px 0;
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        /* Card do Produto na Sacola */
+        .cart-item {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            padding: 20px;
+            transition: box-shadow 0.2s;
+        }
+        .cart-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+        .item-img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .item-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .seller-text { font-size: 0.75rem; color: #888; margin-bottom: 10px; }
+        .seller-text strong { color: #555; }
+
+        /* Controles de Quantidade */
+        .qty-wrapper {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            height: 36px;
+            overflow: hidden;
+        }
+        .qty-btn {
+            background: white; border: none;
+            width: 32px; height: 100%;
+            font-size: 1.2rem; color: #0086ff;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .qty-btn:hover { background-color: #f8f9fa; }
+        .qty-input {
+            width: 40px; height: 100%;
+            border: none; border-left: 1px solid #ddd; border-right: 1px solid #ddd;
+            text-align: center; font-size: 0.9rem; font-weight: 600;
+            color: #333; outline: none;
+        }
+
+        .remove-btn {
+            background: none; border: none;
+            font-size: 0.8rem; color: #666;
+            display: flex; align-items: center; gap: 4px;
+            cursor: pointer; transition: 0.2s;
+            margin-left: 15px;
+        }
+        .remove-btn:hover { color: #dc3545; }
+
+        /* Preços no Item */
+        .item-price-old { font-size: 0.8rem; text-decoration: line-through; color: #999; }
+        .item-price-current { font-size: 1.2rem; font-weight: 800; color: #333; }
+        .item-installments { font-size: 0.75rem; color: #666; }
+
+        /* Card Resumo (Lateral Fixo) */
+        .summary-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            padding: 25px;
+            /* Configuração para ficar fixo ao rolar */
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 110px; /* Distância do topo (considerando a navbar) */
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .summary-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        
+        .summary-row {
+            display: flex; justify-content: space-between;
+            margin-bottom: 12px; font-size: 0.9rem; color: #555;
+        }
+        .summary-total {
+            margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;
+            display: flex; justify-content: space-between; align-items: flex-end;
+        }
+        .total-label { font-weight: 700; font-size: 1rem; color: #333; }
+        .total-val { font-size: 1.6rem; font-weight: 800; color: #333; line-height: 1; }
+        .pix-text { color: #00d600; font-weight: 600; font-size: 0.85rem; text-align: right; margin-top: 5px; }
+
+        .btn-checkout {
+            background-color: #00d600; color: white;
+            font-weight: 700; font-size: 1.1rem;
+            width: 100%; border: none; padding: 15px;
+            border-radius: 6px; text-transform: uppercase;
+            margin-top: 20px; transition: 0.2s;
+        }
+        .btn-checkout:hover { background-color: #00a000; }
+
+        .btn-continue {
+            background: white; border: 1px solid #0086ff; color: #0086ff;
+            width: 100%; padding: 12px; font-weight: 600; border-radius: 6px;
+            margin-top: 10px; transition: 0.2s;
+        }
+        .btn-continue:hover { background: #f0f8ff; }
+
+        /* Mobile */
+        @media(max-width: 991px) {
+            .summary-card { position: static; margin-top: 20px; }
+            .item-actions { margin-top: 15px; justify-content: space-between; }
+            .price-col { text-align: left; margin-top: 10px; }
+        }
+        @media(min-width: 992px) {
+            .price-col { text-align: right; }
+            .item-actions { justify-content: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm">
+        <div class="container-fluid px-2 px-md-3">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <a class="navbar-brand fw-bold fs-3 ms-2 ms-md-3" href="index.html">MAGALU</a>
+            
+            <div class="flex-grow-1 mx-3 mx-md-5 d-none d-lg-block">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                    <button class="btn btn-light text-primary border-0" type="button" style="margin-left: -5px; border-radius: 0 8px 8px 0; z-index: 10;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="d-flex align-items-center gap-3 gap-md-4">
+                <a href="#" class="text-white text-decoration-none d-none d-md-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt fs-5"></i>
+                    <div class="d-flex flex-column lh-1 d-none d-lg-block">
+                        <span class="opacity-75" style="font-size: 0.7rem;">Enviar para</span>
+                        <span class="fw-bold" style="font-size: 0.8rem;">Informe seu CEP</span>
+                    </div>
+                </a>
+                <a href="#" class="text-white"><i class="bi bi-heart fs-5"></i></a>
+                <a href="#" class="text-white position-relative">
+                    <i class="bi bi-cart3 fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size: 0.6rem;">5</span>
+                </a>
+                <a href="#" class="text-white"><i class="bi bi-person fs-5"></i></a>
+            </div>
+        </div>
+        
+        <div class="container-fluid mt-2 px-3 d-lg-none pb-2">
+            <input type="text" class="form-control search-input" placeholder="Buscar produtos...">
+        </div>
+    </nav>
+
+    <!-- Menu Lateral Mobile -->
+    <div class="offcanvas offcanvas-start" id="menuLateral">
+        <div class="offcanvas-header bg-primary text-white">
+            <h5 class="offcanvas-title">Olá, faça login</h5>
+            <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li class="p-3 border-bottom fw-bold"><i class="bi bi-house me-2"></i> Início</li>
+                <li class="p-3 border-bottom"><i class="bi bi-person me-2"></i> Minha Conta</li>
+                <li class="p-3 border-bottom"><i class="bi bi-box-seam me-2"></i> Meus Pedidos</li>
+                <li class="p-3 border-bottom"><i class="bi bi-heart me-2"></i> Favoritos</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conteúdo do Carrinho -->
+    <div class="container">
+        <h1 class="page-title"><i class="bi bi-bag-check text-primary"></i> Sua Sacola</h1>
+
+        <div class="row g-4">
+            
+            <!-- Lista de Produtos (Esquerda) -->
+            <div class="col-lg-8">
+                
+                <!-- Produto 1 -->
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-3 col-md-2 text-center">
+                            <img src="https://via.placeholder.com/150/4a90e2/ffffff?text=Galaxy+A07" class="item-img" alt="Smartphone">
+                        </div>
+                        <div class="col-9 col-md-6">
+                            <h5 class="item-title">Smartphone Samsung Galaxy A07 128GB Preto 4G - Octa-Core 4GB RAM 6,5"</h5>
+                            <p class="seller-text">Vendido e entregue por <strong>Magalu</strong></p>
+                            
+                            <div class="d-flex align-items-center item-actions">
+                                <div class="qty-wrapper">
+                                    <button class="qty-btn">-</button>
+                                    <input type="text" class="qty-input" value="1" readonly>
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <button class="remove-btn"><i class="bi bi-trash"></i> <span class="d-none d-sm-inline">Remover</span></button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 price-col">
+                            <div class="item-price-old">R$ 799,00</div>
+                            <div class="item-price-current">R$ 719,10</div>
+                            <div class="item-installments">ou R$ 799,00 em 10x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-3 col-md-2 text-center">
+                            <img src="https://via.placeholder.com/150/2ecc71/ffffff?text=TV+32" class="item-img" alt="TV">
+                        </div>
+                        <div class="col-9 col-md-6">
+                            <h5 class="item-title">Smart TV 32" SEMP HD LED Google TV - Wi-Fi Bluetooth HDR</h5>
+                            <p class="seller-text">Vendido e entregue por <strong>Magalu</strong></p>
+                            
+                            <div class="d-flex align-items-center item-actions">
+                                <div class="qty-wrapper">
+                                    <button class="qty-btn">-</button>
+                                    <input type="text" class="qty-input" value="1" readonly>
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <button class="remove-btn"><i class="bi bi-trash"></i> <span class="d-none d-sm-inline">Remover</span></button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 price-col">
+                            <div class="item-price-old">R$ 2.125,00</div>
+                            <div class="item-price-current">R$ 869,25</div>
+                            <div class="item-installments">ou R$ 915,00 em 10x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-3 col-md-2 text-center">
+                            <img src="https://via.placeholder.com/150/9b59b6/ffffff?text=PS5" class="item-img" alt="PS5">
+                        </div>
+                        <div class="col-9 col-md-6">
+                            <h5 class="item-title">Console PlayStation 5 Edição Digital 825GB Sony - com Controle DualSense</h5>
+                            <p class="seller-text">Vendido e entregue por <strong>GamesStore</strong></p>
+                            
+                            <div class="d-flex align-items-center item-actions">
+                                <div class="qty-wrapper">
+                                    <button class="qty-btn">-</button>
+                                    <input type="text" class="qty-input" value="1" readonly>
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <button class="remove-btn"><i class="bi bi-trash"></i> <span class="d-none d-sm-inline">Remover</span></button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 price-col">
+                            <div class="item-price-old">R$ 4.099,00</div>
+                            <div class="item-price-current">R$ 3.403,08</div>
+                            <div class="item-installments">ou R$ 3.599,00 em 10x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-3 col-md-2 text-center">
+                            <img src="https://via.placeholder.com/150/e74c3c/ffffff?text=Notebook" class="item-img" alt="Notebook">
+                        </div>
+                        <div class="col-9 col-md-6">
+                            <h5 class="item-title">Notebook Samsung Galaxy Book2 Intel Core i5 8GB 256GB SSD Windows 11</h5>
+                            <p class="seller-text">Vendido e entregue por <strong>TechMundo</strong></p>
+                            
+                            <div class="d-flex align-items-center item-actions">
+                                <div class="qty-wrapper">
+                                    <button class="qty-btn">-</button>
+                                    <input type="text" class="qty-input" value="1" readonly>
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <button class="remove-btn"><i class="bi bi-trash"></i> <span class="d-none d-sm-inline">Remover</span></button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 price-col">
+                            <div class="item-price-old">R$ 3.299,00</div>
+                            <div class="item-price-current">R$ 2.969,10</div>
+                            <div class="item-installments">ou R$ 3.299,00 em 10x</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="cart-item">
+                    <div class="row align-items-center">
+                        <div class="col-3 col-md-2 text-center">
+                            <img src="https://via.placeholder.com/150/1abc9c/ffffff?text=Air+Fryer" class="item-img" alt="Air Fryer">
+                        </div>
+                        <div class="col-9 col-md-6">
+                            <h5 class="item-title">Fritadeira Elétrica sem Óleo Air Fryer Mondial Family 4L Preto</h5>
+                            <p class="seller-text">Vendido e entregue por <strong>Magalu</strong></p>
+                            
+                            <div class="d-flex align-items-center item-actions">
+                                <div class="qty-wrapper">
+                                    <button class="qty-btn">-</button>
+                                    <input type="text" class="qty-input" value="1" readonly>
+                                    <button class="qty-btn">+</button>
+                                </div>
+                                <button class="remove-btn"><i class="bi bi-trash"></i> <span class="d-none d-sm-inline">Remover</span></button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 price-col">
+                            <div class="item-price-old">R$ 599,00</div>
+                            <div class="item-price-current">R$ 329,45</div>
+                            <div class="item-installments">ou R$ 359,00 em 6x</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Resumo (Direita) -->
+            <div class="col-lg-4">
+                <div class="summary-card shadow-sm">
+                    <h5 class="summary-title">Resumo do Pedido</h5>
+                    
+                    <div class="summary-row">
+                        <span>Subtotal (5 produtos)</span>
+                        <span>R$ 8.289,98</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Frete</span>
+                        <span class="text-success fw-bold">Grátis</span>
+                    </div>
+                    
+                    <div class="summary-row">
+                        <span>Descontos</span>
+                        <span class="text-success">- R$ 414,50</span>
+                    </div>
+
+                    <div class="summary-total">
+                        <span class="total-label">Total</span>
+                        <div class="text-end">
+                            <div class="total-val">R$ 7.875,48</div>
+                            <div class="pix-text">em 1x no Pix</div>
+                        </div>
+                    </div>
+                    <div class="text-end text-muted small mt-1">ou R$ 8.289,98 em 10x sem juros</div>
+                    
+                    <button class="btn-checkout">Continuar a Compra</button>
+                    <button class="btn-continue">Escolher mais produtos</button>
+                </div>
+                
+                <div class="mt-3 bg-white p-3 rounded border text-center d-flex align-items-center justify-content-center gap-2">
+                    <i class="bi bi-shield-check text-success fs-4"></i>
+                    <div class="text-start">
+                        <div class="fw-bold" style="font-size: 0.9rem;">Compra Segura</div>
+                        <small class="text-muted" style="font-size: 0.75rem;">Seus dados protegidos.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4 mt-5 text-center">
+        <div class="container small text-muted">
+            <p class="mb-1">Preços e condições exclusivos para internet.</p>
+            <p class="mb-0">Magazine Luiza S/A - CNPJ: 47.960.950/1088-36</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

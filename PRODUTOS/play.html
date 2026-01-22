@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayStation 5 Edição Digital 825GB Sony</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm">
+        <div class="container-fluid px-2 px-md-3">
+            <!-- Botão Menu Mobile -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold fs-3 ms-2 ms-md-3" href="../index.html">MAGALU</a>
+            
+            <!-- Busca Desktop -->
+            <div class="flex-grow-1 mx-3 mx-md-5 d-none d-lg-block">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                    <button class="btn btn-light text-primary border-0" type="button" style="margin-left: -5px; border-radius: 0 8px 8px 0; z-index: 10;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Ícones Direita -->
+            <div class="d-flex align-items-center gap-3 gap-md-4">
+                <a href="#" class="text-white text-decoration-none d-none d-md-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt fs-5"></i>
+                    <div class="d-flex flex-column lh-1 d-none d-lg-block">
+                        <span class="opacity-75" style="font-size: 0.7rem;">Enviar para</span>
+                        <span class="fw-bold" style="font-size: 0.8rem;">Informe seu CEP</span>
+                    </div>
+                </a>
+                <a href="#" class="text-white"><i class="bi bi-heart fs-5"></i></a>
+                <a href="#" class="text-white position-relative">
+                    <i class="bi bi-cart3 fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size: 0.6rem;">2</span>
+                </a>
+                <a href="#" class="text-white"><i class="bi bi-person fs-5"></i></a>
+            </div>
+        </div>
+        
+        <!-- Busca Mobile -->
+        <div class="container-fluid mt-2 px-3 d-lg-none pb-2">
+            <input type="text" class="form-control search-input" placeholder="Buscar produtos...">
+        </div>
+    </nav>
+
+    <!-- Menu Lateral Mobile -->
+    <div class="offcanvas offcanvas-start" id="menuLateral">
+        <div class="offcanvas-header bg-primary text-white">
+            <h5 class="offcanvas-title">Olá, faça login</h5>
+            <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li class="p-3 border-bottom fw-bold"><i class="bi bi-house me-2"></i> Início</li>
+                <li class="p-3 border-bottom"><i class="bi bi-person me-2"></i> Minha Conta</li>
+                <li class="p-3 border-bottom"><i class="bi bi-box-seam me-2"></i> Meus Pedidos</li>
+                <li class="p-3 border-bottom"><i class="bi bi-heart me-2"></i> Favoritos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-nav">
+            <a href="#">Magalu</a> <span>></span>
+            <a href="#">Smart</a> <span>></span>
+            <span class="text-dark">TV</span>
+        </div>
+
+        <!-- Card Principal -->
+        <div class="product-container">
+            <div class="row">
+                <!-- Imagens -->
+                <div class="col-lg-7">
+                    <div class="main-img-wrapper">
+                        <img id="mainImage" src="img/play.1.webp" alt="Produto">
+                        <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                    </div>
+                    <div class="thumb-list">
+                        <div class="thumb active" >
+                            <img src="img/play.1.webp">
+                        </div>
+                        <div class="thumb" >
+                            <img src="img/play.2.webp">
+                        </div>
+                        <div class="thumb">
+                            <img src="img/play3.webp">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Compra -->
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <div class="product-code">Código 240590700</div>
+                    <h1 class="product-title">PlayStation 5 Edição Digital 825GB Sony</h1>
+                    
+                    <div class="rating-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        <span class="rating-count text-decoration-underline ms-2">5.0 (1.148 avaliações)</span>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-old">R$ 4.099,00</div>
+                        <div class="price-row align-items-center">
+                            <span class="price-val">R$ 3.298,08</span>
+                            <span class="pix-badge">no Pix</span>
+                        </div>
+                
+                        <div class="installments">ou R$ 3.584,87 em 10x de R$ 358,49 sem juros</div>
+
+                        <button class="btn-buy"><i class="bi bi-bag-check"></i> Comprar Agora</button>
+                        <button class="btn-cart"><i class="bi bi-cart-plus"></i> Adicionar à Sacola</button>
+
+                        <!-- Vendedor -->
+                        <div class="mt-3 p-2 border rounded bg-white d-flex align-items-center gap-2">
+                            <i class="bi bi-shop text-primary fs-4"></i>
+                            <div style="font-size: 0.8rem; line-height: 1.2;">
+                                Vendido e entregue por<br><strong>Magalu</strong>
+                            </div>
+                        </div>
+
+                        <!-- Frete -->
+                        <div class="shipping-box">
+                            <div class="shipping-title"><i class="bi bi-truck text-primary"></i> Consultar frete e prazo</div>
+                            <div class="shipping-form">
+                                <input type="text" class="shipping-input" placeholder="CEP">
+                                <button class="shipping-ok" onclick="calcFrete()">Ok</button>
+                            </div>
+                            <div id="freteResult" class="mt-2 text-success small fw-bold d-none">
+                                <i class="bi bi-check-circle-fill"></i> Chega amanhã - <strong>Grátis</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Descrição e Ficha -->
+        <div class="info-section">
+            <h2 class="section-header">Descrição do Produto</h2>
+            <div class="row">
+                <div class="col-lg-7 desc-text">
+                    <p>Play Like Never Before®
+                        O Pack PlayStation®5 Edição Digital 825GB - ASTRO BOT e Gran Turismo 7 libera ainda mais possibilidades de jogo. Este bundle com ótimo custo-benefício inclui dois exclusivos PlayStation altamente aclamados pelos PlayStation Studios: ASTRO BOT e Gran Turismo 7.
+                        PlayStation 5 Aproveite o carregamento extremamente rápido com o SSD de altíssima velocidade, uma imersão mais profunda com suporte a resposta tátil, gatilhos adaptáveis e áudio em 3D2, além de uma geração inédita de jogos incríveis para PlayStation®.
+                        O PS5® Edição Digital é uma versão totalmente digital do console PS5 sem unidade de disco. Entre em sua conta da PlayStation™Network e acesse a PlayStation™Store para comprar e baixar jogos.
+                        Na velocidade da luz domine o poder de uma CPU e GPU personalizadas e o SSD com E/S integradas que redefinem as regras do que o console PlayStation® pode fazer.
+                        Jogos impressionantes maravilhe-se com os gráficos incríveis e experimente os recursos do novo PS5®. Jogue o catálogo de jogos compatíveis com o PS4®.
+                        Imersão de tirar o fôlego Descubra uma experiência de jogos mais profunda com compatibilidade com feedback tátil, gatilhos adaptáveis e tecnologia de áudio em 3D.
+                        Junte-se ao ASTRO em uma aventura espacial gigantesca! Quando o maior e mais antigo inimigo galáctico do ASTRO ataca a nave-mãe PS5®, bagunçando os cabos e espalhando a tripulação pelo espaço sideral, ASTRO é o único capaz de resolver o problema! Na maior missão que já recebeu, ASTRO precisará da sua ajuda para resgatar a tripulação perdida e reconstruir a nave-mãe. Tire o máximo proveito dos novos poderes de ASTRO, desenvolvidos especialmente para aumentar a imersão: domine socos elásticos, foguetes e até uma esponja gigante!
+                        Curta a experiência completa do verdadeiro simulador de corridas... com 25 anos de estrada. Assuma o volante de mais de 400 carros já no primeiro dia — com cada motor clássico e supercarro de ponta recriados com um detalhismo sem igual — e corra por mais de 90 pistas em condições climáticas dinâmicas. Com a volta do lendário modo GT Simulation, você poderá comprar, modificar, pilotar e vender seus carros ao longo de uma campanha individual enquanto vai desbloqueando novos veículos e desafios. E, para quem curte duelar com outros pilotos, é possível aprimorar suas habilidades e competir no Modo GT Sport.
+                        
+                        INFORMAÇÃO IMPORTANTE SOBRE ARMAZENAMENTO:
+                        Espaço Total do SSD: 825 GB.
+                        Espaço Livre Disponível para Jogos: Aproximadamente 667 GB (parte da memória é reservada para o sistema operacional garantir a ultra velocidade).
+                        Atenção: Este modelo NÃO é a versão "Slim" de 1TB.</p>
+                </div>
+                <div class="col-lg-5">
+                    <h3 class="section-header" style="font-size: 1.1rem;">Ficha Técnica</h3>
+                    <table class="tech-table">
+                        <tr><td>Marca</td><td>Sony</td></tr>
+                        <tr><td>Modelo</td><td>PS5 CFI 2114B Edição Digital</td></tr>
+                        <tr><td>Tipo de Controle</td><td>Sem Fio DualSense</td></tr>
+                        <tr><td>Tipo de Conexões</td><td>USB-A, USB-C, HDMI</td></tr>
+                        <tr><td>Cor</td><td>Branco</td></tr>
+                        <tr><td>Idioma</td><td>Português</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avaliações -->
+        <div class="info-section">
+            <h2 class="section-header">Avaliações</h2>
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="display-4 fw-bold text-dark">4.8</div>
+                <div>
+                    <div class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                    <div class="small text-muted">Baseado em 1.148 notas</div>
+                </div>
+            </div>
+
+            <div class="border-top pt-4">
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <strong class="text-dark">gleison</strong>
+                        <span class="text-muted small">15/10/2023</span>
+                    </div>
+                    <div class="text-warning small mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="text-muted mb-0">Produto original e foi entregue antes do prazo de compra </p>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <strong class="text-dark">nicolas</strong>
+                        <span class="text-muted small">10/10/2023</span>
+                    </div>
+                    <div class="text-warning small mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
+                    <p class="text-muted mb-0">Lacrado e tudo funcionando perfeitamente chegou 4 dias antes do prazo super recomendo ❤️ </p>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-primary fw-bold">Ver todas as avaliações</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-top py-4 mt-5 text-center">
+        <div class="container small text-muted">
+            <p class="mb-1">Preços e condições exclusivos para internet.</p>
+            <p class="mb-0">Magazine Luiza S/A - CNPJ: 47.960.950/1088-36</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

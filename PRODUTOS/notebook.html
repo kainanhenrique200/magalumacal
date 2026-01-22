@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook Intel Core i5 8GB 256GB SSD</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm">
+        <div class="container-fluid px-2 px-md-3">
+            <!-- Botão Menu Mobile -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold fs-3 ms-2 ms-md-3" href="../index.html">MAGALU</a>
+            
+            <!-- Busca Desktop -->
+            <div class="flex-grow-1 mx-3 mx-md-5 d-none d-lg-block">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                    <button class="btn btn-light text-primary border-0" type="button" style="margin-left: -5px; border-radius: 0 8px 8px 0; z-index: 10;">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Ícones Direita -->
+            <div class="d-flex align-items-center gap-3 gap-md-4">
+                <a href="#" class="text-white text-decoration-none d-none d-md-flex align-items-center gap-2">
+                    <i class="bi bi-geo-alt fs-5"></i>
+                    <div class="d-flex flex-column lh-1 d-none d-lg-block">
+                        <span class="opacity-75" style="font-size: 0.7rem;">Enviar para</span>
+                        <span class="fw-bold" style="font-size: 0.8rem;">Informe seu CEP</span>
+                    </div>
+                </a>
+                <a href="#" class="text-white"><i class="bi bi-heart fs-5"></i></a>
+                <a href="#" class="text-white position-relative">
+                    <i class="bi bi-cart3 fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size: 0.6rem;">2</span>
+                </a>
+                <a href="#" class="text-white"><i class="bi bi-person fs-5"></i></a>
+            </div>
+        </div>
+        
+        <!-- Busca Mobile -->
+        <div class="container-fluid mt-2 px-3 d-lg-none pb-2">
+            <input type="text" class="form-control search-input" placeholder="Buscar produtos...">
+        </div>
+    </nav>
+
+    <!-- Menu Lateral Mobile -->
+    <div class="offcanvas offcanvas-start" id="menuLateral">
+        <div class="offcanvas-header bg-primary text-white">
+            <h5 class="offcanvas-title">Olá, faça login</h5>
+            <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li class="p-3 border-bottom fw-bold"><i class="bi bi-house me-2"></i> Início</li>
+                <li class="p-3 border-bottom"><i class="bi bi-person me-2"></i> Minha Conta</li>
+                <li class="p-3 border-bottom"><i class="bi bi-box-seam me-2"></i> Meus Pedidos</li>
+                <li class="p-3 border-bottom"><i class="bi bi-heart me-2"></i> Favoritos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-nav">
+            <a href="#">Magalu</a> <span>></span>
+            <a href="#">notebook</a> <span>></span>
+            <span class="text-dark">Telas</span>
+        </div>
+
+        <!-- Card Principal -->
+        <div class="product-container">
+            <div class="row">
+                <!-- Imagens -->
+                <div class="col-lg-7">
+                    <div class="main-img-wrapper">
+                        <img id="mainImage" src="img/note.1.webp" alt="Produto">
+                        <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                    </div>
+                    <div class="thumb-list">
+                        <div class="thumb active" >
+                            <img src="img/note.1.webp">
+                        </div>
+                        <div class="thumb" >
+                            <img src="img/note.2.webp">
+                        </div>
+                        <div class="thumb">
+                            <img src="img/note.3.webp">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Compra -->
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <div class="product-code">Código jg7d7h7853</div>
+                    <h1 class="product-title">Notebook Intel Core i5 8GB 256GB SSD</h1>
+                    
+                    <div class="rating-stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        <span class="rating-count text-decoration-underline ms-2">5.0 (10 avaliações)</span>
+                    </div>
+
+                    <div class="price-card">
+                        <div class="price-old">R$ 5.199,00</div>
+                        <div class="price-row align-items-center">
+                            <span class="price-val">R$ 2.437,25</span>
+                            <span class="pix-badge">no Pix</span>
+                        </div>
+                
+                        <div class="installments">ou R$ 2.834,12 em 10x de R$ 283,41 sem juros</div>
+
+                        <button class="btn-buy"><i class="bi bi-bag-check"></i> Comprar Agora</button>
+                        <button class="btn-cart"><i class="bi bi-cart-plus"></i> Adicionar à Sacola</button>
+
+                        <!-- Vendedor -->
+                        <div class="mt-3 p-2 border rounded bg-white d-flex align-items-center gap-2">
+                            <i class="bi bi-shop text-primary fs-4"></i>
+                            <div style="font-size: 0.8rem; line-height: 1.2;">
+                                Vendido e entregue por<br><strong>Magalu</strong>
+                            </div>
+                        </div>
+
+                        <!-- Frete -->
+                        <div class="shipping-box">
+                            <div class="shipping-title"><i class="bi bi-truck text-primary"></i> Consultar frete e prazo</div>
+                            <div class="shipping-form">
+                                <input type="text" class="shipping-input" placeholder="CEP">
+                                <button class="shipping-ok" onclick="calcFrete()">Ok</button>
+                            </div>
+                            <div id="freteResult" class="mt-2 text-success small fw-bold d-none">
+                                <i class="bi bi-check-circle-fill"></i> Chega amanhã - <strong>Grátis</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Descrição e Ficha -->
+        <div class="info-section">
+            <h2 class="section-header">Descrição do Produto</h2>
+            <div class="row">
+                <div class="col-lg-7 desc-text">
+                    <p>Com visual moderno, componentes atualizados e conforto superior, o ASUS Vivobook 15 é a escolha ideal para quem precisa de um notebook confiável para trabalhar, estudar e realizar tarefas do dia a dia. Este computador não só combina alto desempenho, experiência audiovisual imersiva e construção robusta, como também protege sua saúde com tecnologias exclusivas da ASUS.
+
+                        DESEMPENHO PARA IR ALÉM
+                        
+                        Equipado com processador Intel Core de 13 geração, o ASUS Vivobook 15 garante desempenho ágil e fluido para multitarefas, incluindo estudos, trabalho e entretenimento. Seja navegando com diversas abas abertas, editando documentos ou assistindo a vídeos em alta resolução, tudo acontece com rapidez e eficiência.
+                        
+                        Part Number: 90NB10J2-M02730
+                        SKU ASUS: X1504VA-NJ1739
+                        EAN Code: 7908737300765
+                        Código de homologação Anatel: 00595-18-04423
+                        Processador Intel Core i5 1334U 1.3 GHz, 12 MB Cache
+                        Memória RAM: 8 GB (4 GB OnBoard + 4 GB OffBoard)
+                        Armazenamento: 256 GB SSD
+                        Tela 15.6'' LED-backlit Anti-Glare
+                        Resolução da Tela: 1920x1080
+                        Placa de Vídeo: Intel Iris Xe
+                        Garantia 12 meses
+                        Tela Sensível ao Toque: Não
+                        Clock de Memória: 3200 MHz
+                        Wi-Fi 5(802.11ac) (Dual band) 1*1 + Bluetooth 5.1
+                        Tipo da Placa de vídeo: Integrada
+                        Teclado retro iluminado: Não
+                        Câmera Frontal: HD
+                        Bluetooth 5,1
+                        
+                        Áudio
+                        SonicMaster
+                        Alto-falantes embutidos
+                        Microfone embutido
+                        
+                        Saídas
+                        1x USB 2.0 Tipo-A
+                        1x USB 3.2 Ger 1 Tipo-C
+                        2x USB 3.2 Ger 1 Tipo-A
+                        1x HDMI 1.4
+                        1x Conector de áudio combo 3.5mm
+                        1x DC-in
+                        
+                        Adaptador de Energia 45 W
+                        Bateria 3 Células / 3780 mAh
+                        Sistema Operacional: Linux KeepOS
+                        
+                        Características
+                        Especificações Militares US MIL-STD 810H
+                        Tampa de privacidade para a Webcam
+                        Certificação TV Rheinland
+                        Energy star 8.0
+                        EPEAT Silver
+                        REACH
+                        RoHS
+                        
+                        Peso do Produto: 1.7 Kg
+                        Dimensões (L x C x A) 3</p>
+                </div>
+                <div class="col-lg-5">
+                    <h3 class="section-header" style="font-size: 1.1rem;">Ficha Técnica</h3>
+                    <table class="tech-table">
+                        <tr><td>Marca</td><td>Anatel</td></tr>
+                        <tr><td>Bateria</td><td>3 Células / 3780 mAh</td></tr>
+                        <tr><td>Câmera Frontal</td><td>HD</td></tr>
+                        <tr><td>Áudio</td><td>SonicMaster Alto-falantes embutidos Microfone embutido</td></tr>
+                        <tr><td>Cor</td><td>Cool Silver</td></tr>
+                        <tr><td>Idioma</td><td>Português</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Avaliações -->
+        <div class="info-section">
+            <h2 class="section-header">Avaliações</h2>
+            <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="display-4 fw-bold text-dark">4.8</div>
+                <div>
+                    <div class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                    <div class="small text-muted">Baseado em 10 notas</div>
+                </div>
+            </div>
+
+            <div class="border-top pt-4">
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <strong class="text-dark">Martha</strong>
+                        <span class="text-muted small">15/10/2023</span>
+                    </div>
+                    <div class="text-warning small mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="text-muted mb-0">Produto original e foi entregue antes do prazo de compra </p>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <strong class="text-dark">Nelson</strong>
+                        <span class="text-muted small">10/10/2023</span>
+                    </div>
+                    <div class="text-warning small mb-2"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
+                    <p class="text-muted mb-0">Muito bom. Rápido e nem moderno. Atende para uso do dia a dia, trabalho e faculdade. </p>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-primary fw-bold">Ver todas as avaliações</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-top py-4 mt-5 text-center">
+        <div class="container small text-muted">
+            <p class="mb-1">Preços e condições exclusivos para internet.</p>
+            <p class="mb-0">Magazine Luiza S/A - CNPJ: 47.960.950/1088-36</p>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
