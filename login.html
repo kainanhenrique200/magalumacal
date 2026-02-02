@@ -1,167 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Virtual - Página Principal</title>
-    
-    <!-- Bootstrap 5.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            overflow-x: hidden;
-            background-color: #f5f5f5;
-        }
-        
-        .navbar-custom {
-            background-color: #0086ff;
-        }
-        
-        .search-input {
-            border-radius: 8px;
-            padding: 12px;
-            width: 100%;
-            border: none;
-        }
-        
-        /* Ícones de Categoria */
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        
-        .category-icon:hover {
-            transform: scale(1.1);
-        }
-        
-        .category-icon i {
-            font-size: 1.5rem;
-            color: #0086ff;
-        }
-        
-        /* Card do Produto */
-        .product-card {
-            height: 100%;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border-radius: 8px;
-            background: white;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-        }
-        
-        .product-card img {
-            height: 280px; /* Aumentado para deixar produtos maiores */
-            object-fit: contain; /* Mudado para contain para ver o produto inteiro melhor */
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .badge-full {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 10;
-            font-size: 0.85rem;
-            padding: 6px 12px;
-        }
-        
-        .price-old {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        .price-pix {
-            font-size: 1.6rem; /* Aumentado */
-            font-weight: bold;
-            color: #333;
-        }
-        
-        .newsletter-section {
-            background: linear-gradient(135deg, #0086ff 0%, #0056b3 100%);
-        }
-        
-        /* Ajustes do Carrossel de Produtos */
-        .carousel-control-prev, .carousel-control-next {
-            width: 5%;
-        }
-        
-        .carousel-control-prev-icon, .carousel-control-next-icon {
-            background-color: rgba(0,0,0,0.5);
-            border-radius: 50%;
-            padding: 20px;
-        }
+    <title>Loja Virtual - Login</title>
 
-        .carousel-item > div {
-            min-height: 300px;
-        }
-        
-        @media (min-width: 768px) {
-            .carousel-item > div {
-                min-height: 400px;
-            }
-            .category-icon {
-                width: 80px;
-                height: 80px;
-            }
-            .category-icon i {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .price-pix {
-                font-size: 1.3rem;
-            }
-            .product-card img {
-                height: 200px;
-            }
-        }
-    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Navbar -->
+
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm">
         <div class="container-fluid px-2 px-md-3">
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#menuLateral">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <a class="navbar-brand fw-bold fs-3 ms-2 ms-md-3" href="index.html">MAGALU</a>
-            
+
             <div class="flex-grow-1 mx-3 mx-md-5 d-none d-lg-block">
                 <div class="input-group">
-                    <input type="text" class="form-control search-input" placeholder="Buscar produtos, marcas e muito mais...">
+                    <input type="text" class="form-control pesquisa-input"
+                        placeholder="Buscar produtos, marcas e muito mais...">
                     <button class="btn btn-light text-primary" type="button">
                         <i class="bi bi-search"></i>
                     </button>
                 </div>
             </div>
-            
+
             <div class="d-flex align-items-center gap-3 gap-md-4">
                 <a href="#" class="text-white text-decoration-none d-none d-md-flex align-items-center gap-2">
                     <i class="bi bi-geo-alt fs-5"></i>
@@ -173,13 +48,77 @@
                 <a href="favoritos.html" class="text-white"><i class="bi bi-heart fs-5"></i></a>
                 <a href="carrinho.html" class="text-white position-relative">
                     <i class="bi bi-cart3 fs-5"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" style="font-size: 0.6rem;">2</span>
+                    <span
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
+                        style="font-size: 0.6rem;">2</span>
                 </a>
                 <a href="login.html" class="text-white"><i class="bi bi-person fs-5"></i></a>
             </div>
         </div>
-        
+
         <div class="container-fluid mt-2 px-3 d-lg-none pb-2">
             <input type="text" class="form-control search-input" placeholder="Buscar produtos...">
         </div>
     </nav>
+
+
+    <main class="conteudo">
+        <h1 class="titulo">Identificação</h1>
+
+        <section class="caixa-login">
+
+            <div class="coluna">
+                <h2><strong>Quero criar uma conta</strong></h2>
+                <label for="novo-email" class="campo-label">E-mail</label>
+                <input id="novo-email" type="email" class="campo-input" placeholder="Digite seu e-mail">
+                <button class="btn-ident btn-verde">Continuar</button>
+                <p class="duvidas">Dúvidas? fale conosco</p>
+            </div>
+
+            <div class="divisor"></div>
+
+
+            <div class="coluna">
+                <h2><strong>Já sou cliente</strong></h2>
+
+                <label for="login-id" class="campo-label">E-mail, CPF ou CNPJ</label>
+                <input id="login-id" type="text" class="campo-input" placeholder="Digite seu e-mail, CPF ou CNPJ">
+
+                <label for="senha" class="campo-label">Senha</label>
+                <div class="campo-senha">
+                    <input id="senha" type="password" class="campo-input" placeholder="Digite sua senha">
+                    <span class="olho">&#128065;</span>
+                </div>
+
+                <button class="btn-ident btn-verde">Continuar</button>
+
+                <div class="ou-linha">
+                    <span>ou</span>
+                </div>
+
+                <button class="btn-ident btn-azul">Entrar sem senha</button>
+
+                <a href="#" class="link-menor">Esqueci minha senha</a>
+            </div>
+        </section>
+
+        <section class="use-sua-social">
+            <p>Use sua rede social para se conectar*</p>
+            <button class="btn-google">
+                <img src="simbolo-do-google.png" class="google-logo-img" alt="Google">
+                Fazer login
+            </button>
+        </section>
+
+        <footer class="rodape">
+            <p>Seus dados pessoais serão respeitados de acordo com a nossa política de privacidade.</p>
+            <p class="texto-menor">Em caso de dúvidas, acesse nossa central de atendimento.</p>
+            <a href="#" class="link-menor">Mais informações</a>
+        </footer>
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
