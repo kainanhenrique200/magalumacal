@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smartphone Samsung Galaxy A07 - Magalu</title>
+    <title>Batedeira Planetária Mondial 700W - Magalu</title>
 
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-personalizada sticky-top shadow-sm">
         <div class="container-fluid px-2 px-md-3">
             <!-- Botão Menu Mobile -->
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
@@ -32,7 +32,7 @@
             <!-- Busca Desktop -->
             <div class="flex-grow-1 mx-3 mx-md-5 d-none d-lg-block">
                 <div class="input-group">
-                    <input type="text" class="form-control search-input"
+                    <input type="text" class="form-control"
                         placeholder="Buscar produtos, marcas e muito mais...">
                     <button class="btn btn-light text-primary border-0" type="button"
                         style="margin-left: -5px; border-radius: 0 8px 8px 0; z-index: 10;">
@@ -46,68 +46,53 @@
                 <a href="#" class="text-white text-decoration-none d-none d-md-flex align-items-center gap-2">
                     <i class="bi bi-geo-alt fs-5"></i>
                     <div class="d-flex flex-column lh-1 d-none d-lg-block">
-                        <span class="opacity-75" style="font-size: 0.7rem;">Enviar para</span>
+                        <span class="" style="font-size: 0.7rem;">Enviar para</span>
                         <span class="fw-bold" style="font-size: 0.8rem;">Informe seu CEP</span>
                     </div>
                 </a>
                 <a href="#" class="text-white"><i class="bi bi-heart fs-5"></i></a>
-                <a href="#" class="text-white position-relative">
+                <a href="../carrinho.html" class="text-white position-relative">
                     <i class="bi bi-cart3 fs-5"></i>
                     <span
                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
                         style="font-size: 0.6rem;">2</span>
                 </a>
-                <a href="#" class="text-white"><i class="bi bi-person fs-5"></i></a>
+                <a href="../login.html" class="text-white"><i class="bi bi-person fs-5"></i></a>
             </div>
         </div>
 
         <!-- Busca Mobile -->
-        <div class="container-fluid mt-2 px-3 d-lg-none pb-2">
-            <input type="text" class="form-control search-input" placeholder="Buscar produtos...">
+        <div class="container-fluid mt-2 px-3 d-lg-none">
+            <input type="text" class="form-control" placeholder="Buscar produtos...">
         </div>
     </nav>
 
-    <!-- Menu Lateral Mobile -->
-    <div class="offcanvas offcanvas-start" id="menuLateral">
-        <div class="offcanvas-header bg-primary text-white">
-            <h5 class="offcanvas-title">Olá, faça login</h5>
-            <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="list-unstyled">
-                <li class="p-3 border-bottom fw-bold"><i class="bi bi-house me-2"></i> Início</li>
-                <li class="p-3 border-bottom"><i class="bi bi-person me-2"></i> Minha Conta</li>
-                <li class="p-3 border-bottom"><i class="bi bi-box-seam me-2"></i> Meus Pedidos</li>
-                <li class="p-3 border-bottom"><i class="bi bi-heart me-2"></i> Favoritos</li>
-            </ul>
-        </div>
-    </div>
 
     <div class="container">
         <!-- Breadcrumb -->
-        <div class="breadcrumb-nav">
+        <div class="nav-migalhas">
             <a href="#">Magalu</a> <span>></span>
             <a href="#">Cozinha</a> <span>></span>
             <span class="text-dark"></span>
         </div>
 
         <!-- Card Principal -->
-        <div class="product-container">
+        <div class="container-produto">
             <div class="row">
                 <!-- Imagens -->
                 <div class="col-lg-7">
-                    <div class="main-img-wrapper">
+                    <div class="container-imagem-principal">
                         <img id="mainImage" src="img/batedeira.1.webp" alt="Produto">
-                        <button class="fav-btn"><i class="bi bi-heart"></i></button>
+                        <button class="btn-favorito"><i class="bi bi-heart"></i></button>
                     </div>
-                    <div class="thumb-list">
-                        <div class="thumb active">
+                    <div class="lista-miniaturas">
+                        <div class="miniatura ativo">
                             <img src="img/batedeira.1.webp">
                         </div>
-                        <div class="thumb">
+                        <div class="miniatura">
                             <img src="img/batedeira.2.webp">
                         </div>
-                        <div class="thumb">
+                        <div class="miniatura">
                             <img src="img/batedeira.3.webp">
                         </div>
                     </div>
@@ -115,26 +100,26 @@
 
                 <!-- Info Compra -->
                 <div class="col-lg-5 mt-4 mt-lg-0">
-                    <div class="product-code">Cód. mp29384812</div>
-                    <h1 class="product-title">Batedeira Planetária Mondial 700W</h1>
+                    <div class="codigo-produto">Cód. mp29384812</div>
+                    <h1 class="titulo-produto">Batedeira Planetária Mondial 700W</h1>
 
-                    <div class="rating-stars">
+                    <div class="estrelas-avaliacao">
                         <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                             class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-                        <span class="rating-count text-decoration-underline ms-2">4.8 (428 avaliações)</span>
+                        <span class="contagem-avaliacao text-decoration-underline ms-2">4.8 (428 avaliações)</span>
                     </div>
 
-                    <div class="price-card">
-                        <div class="price-old">R$ 799,00</div>
-                        <div class="price-row align-items-center">
-                            <span class="price-val">R$ 719,10</span>
-                            <span class="pix-badge">no Pix</span>
+                    <div class="cartao-preco">
+                        <div class="preco-antigo">R$ 799,00</div>
+                        <div class="linha-preco align-items-center">
+                            <span class="preco-valor">R$ 719,10</span>
+                            <span class="tag-pix">no Pix</span>
                         </div>
                         <div class="text-success small fw-bold mb-1">(10% de desconto)</div>
-                        <div class="installments">ou R$ 799,00 em 10x de R$ 79,90 sem juros</div>
+                        <div class="texto-parcelamento">ou R$ 799,00 em 10x de R$ 79,90 sem juros</div>
 
-                        <button class="btn-buy"><i class="bi bi-bag-check"></i> Comprar Agora</button>
-                        <button class="btn-cart"><i class="bi bi-cart-plus"></i> Adicionar à Sacola</button>
+                        <a href="../pagamento.html" class="btn-comprar d-block text-center text-decoration-none"><i class="bi bi-bag-check"></i> Comprar Agora</a>
+                        <a href="../carrinho.html" class="btn-carrinho d-block text-center text-decoration-none"><i class="bi bi-cart-plus"></i> Adicionar à Sacola</a>
 
                         <!-- Vendedor -->
                         <div class="mt-3 p-2 border rounded bg-white d-flex align-items-center gap-2">
@@ -145,12 +130,12 @@
                         </div>
 
                         <!-- Frete -->
-                        <div class="shipping-box">
-                            <div class="shipping-title"><i class="bi bi-truck text-primary"></i> Consultar frete e prazo
+                        <div class="caixa-frete">
+                            <div class="titulo-frete"><i class="bi bi-truck text-primary"></i> Consultar frete e prazo
                             </div>
-                            <div class="shipping-form">
-                                <input type="text" class="shipping-input" placeholder="CEP">
-                                <button class="shipping-ok" onclick="calcFrete()">Ok</button>
+                            <div class="form-frete">
+                                <input type="text" class="input-frete" placeholder="CEP">
+                                <button class="btn-frete-ok" onclick="calcFrete()">Ok</button>
                             </div>
                             <div id="freteResult" class="mt-2 text-success small fw-bold d-none">
                                 <i class="bi bi-check-circle-fill"></i> Chega amanhã - <strong>Grátis</strong>
@@ -162,17 +147,15 @@
         </div>
 
          <!-- Descrição e Ficha -->
-        <div class="info-section">
-            <h2 class="section-header">Descrição do Produto</h2>
+        <div class="secao-info">
+            <h2 class="cabecalho-secao">Descrição do Produto</h2>
             <div class="row">
-                <div class="col-lg-7 desc-text">
-                    <p>A <strong>Bbatedeira</strong> As batedeiras estão sempre prontas para deixar o passo a passo da
-                        sua receita ainda mais fácil, pois elas misturam a massa com total homogeneidade, facilitando
-                        seu trabalho na cozinha.
-                </div>
+                <div class="col-lg-7 texto-descricao">
+<p>Conheça o novo <strong>Batedeira Planetária Mondial 700W</strong>, a escolha perfeita para quem busca qualidade e tecnologia. </p><p>Facilite sua rotina na cozinha com praticidade e eficiência. Prepare receitas deliciosas em menos tempo, com design fácil de limpar e alta durabilidade.</p><p><strong>Principais Características:</strong> Alta performance, acabamento premium e garantia de fábrica. Não perca essa oportunidade!</p>
+                        </div>
                 <div class="col-lg-5">
-                    <h3 class="section-header" style="font-size: 1.1rem;">Ficha Técnica</h3>
-                    <table class="tech-table">
+                    <h3 class="cabecalho-secao" style="font-size: 1.1rem;">Ficha Técnica</h3>
+                    <table class="tabela-tecnica">
                         <tr>
                             <td>Marca</td>
                             <td>Mundial</td>
@@ -199,8 +182,8 @@
         </div>
 
         <!-- Avaliações -->
-        <div class="info-section">
-            <h2 class="section-header">Avaliações</h2>
+        <div class="secao-info">
+            <h2 class="cabecalho-secao">Avaliações</h2>
             <div class="d-flex align-items-center gap-3 mb-4">
                 <div class="display-4 fw-bold text-dark">4.8</div>
                 <div>
@@ -211,7 +194,7 @@
                 </div>
             </div>
 
-            <div class="border-top pt-4">
+            <div class="border-top">
                 <div class="mb-4">
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <strong class="text-dark">João Silva</strong>
