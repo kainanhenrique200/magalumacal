@@ -1,30 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<title>Pagamento</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Magalu - Pagamento</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="pagamento.css">
 </head>
 
-<body class="bg-light">
+<body>
 
-<div class="container mt-5">
-<h3>Pagamento</h3>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom  shadow-sm">
+        <div class="container-fluid px-2 px-md-3">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#menuLateral">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<form class="bg-white p-4 rounded">
-  <div class="mb-3">
-    <label>Forma de pagamento</label>
-    <select class="form-select">
-      <option>Cartão de Crédito</option>
-      <option>Pix</option>
-      <option>Boleto</option>
-    </select>
-  </div>
+            <a class="navbar-brand fw-bold fs-3 ms-2 ms-md-3" href="index.html">MAGALU</a>
 
-  <a href="finalizado.html" class="btn btn-success">Finalizar compra</a>
-  <a href="cadastro.html" class="btn btn-secondary">Cadastrar</a>
-</form>
 
-</div>
+    </nav>
+
+    <main class="py-5">
+        <div class="container">
+            <div class="checkout-steps mb-4 text-center">
+                <img src="topo.png"
+                    style="width: 100%; max-width: 550px; height: auto; max-height: 90px; object-fit: contain;"
+                    alt="Passos checkout">
+            </div>
+
+
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-6 mb-4">
+                    <h4 class="mb-4">Escolha como pagar</h4>
+
+                    <a href="finalizado.html">
+                        <button class="caixas-pagamento btn w-100 mb-3 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/pix.png" href="finalizado.html" class="icone-pagamento pix-icon me-3" alt="Pix">
+                                    <div>
+                                        <div class="fw-semibold">Pix</div>
+                                        <small class="text-success">Desconto de R$ 128,39</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">&gt;</span>
+                            </div>
+                        </button>
+
+
+                        <button class="caixas-pagamento btn w-100 mb-3 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/mastercard.png" class="icone-pagamento mastercard-icon me-3"
+                                        alt="Mastercard" href="finalizado.html">
+                                    <div>
+                                        <div class="fw-semibold">Mastercard 0303</div>
+                                        <small class="text-primary">Em até 10x sem juros</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">&gt;</span>
+                            </div>
+                        </button>
+
+                        <button class="caixas-pagamento btn w-100 mb-3 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/mastercard.png" class="icone-pagamento mastercard-icon me-3"
+                                        alt="Mastercard" href="finalizado.html">
+                                    <div>
+                                        <div class="fw-semibold">Mastercard 1773</div>
+                                        <small class="text-primary">Em até 10x sem juros</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">&gt;</span>
+                            </div>
+                        </button>
+
+                        <button class="caixas-pagamento btn w-100 mb-3 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/novocartao.png" class="icone-pagamento new-card-icon me-3"
+                                        alt="Novo cartão" href="finalizado.html">
+                                    <div class="fw-semibold">Novo cartão de crédito</div>
+                                </div>
+                                <span class="text-muted">&gt;</span>
+                            </div>
+                        </button>
+
+
+                        <button class="caixas-pagamento btn w-100 mb-3 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <img src="img/doiscartoes.png" class="icone-pagamento two-cards-icon me-2"
+                                            alt="2 cartões">
+                                        <div class="fw-semibold">Pagar com 2 cartões</div>
+                                    </div>
+                                    <small class="text-muted">Pagamento mínimo de R$ 20,00</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="badge bg-primary me-3">Novo</span>
+                                    <span class="text-muted">&gt;</span>
+                                </div>
+                            </div>
+                        </button>
+
+
+
+                        <button class="caixas-pagamento btn w-100 text-start">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/boleto.png" class="icone-pagamento boleto-icon me-3" alt="Boleto">
+                                    <div>
+                                        <div class="fw-semibold">Boleto bancário</div>
+                                        <small class="text-muted">Aprovação em até 3 dias</small>
+                                    </div>
+                                </div>
+                                <span class="text-muted">&gt;</span>
+                            </div>
+                        </button>
+                    </a>
+
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="caixa-cupom mb-3">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>Tem um código de cupom?</span>
+                            <button class="btn btn-outline-primary btn-sm">Inserir</button>
+                        </div>
+                    </div>
+
+                    <div class="subtotal">
+                        <div class="d-flex justify-content-between">
+                            <span class="fw-semibold">Subtotal:</span>
+                            <span class="fw-semibold">R$ 1.382,80</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
 </body>
+
 </html>
