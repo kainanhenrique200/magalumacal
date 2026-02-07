@@ -1,0 +1,259 @@
+
+        /* --- Reset e Globais --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            /* overflow-x: hidden removido para garantir que position: sticky funcione perfeitamente */
+            padding-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Navbar (Estilo Magalu) --- */
+        .navbar-personalizada {
+            background-color: #0086ff;
+        }
+
+        .campo-busca {
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .navbar-brand {
+            letter-spacing: -1px;
+        }
+
+        /* --- Layout Sacola --- */
+        .titulo-pagina {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Card do Produto na Sacola */
+        .item-carrinho {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 15px;
+            padding: 20px;
+            transition: box-shadow 0.2s;
+        }
+
+        .item-carrinho:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .imagem-produto {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .titulo-produto {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+
+        .texto-vendedor {
+            font-size: 0.75rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .texto-vendedor strong {
+            color: #555;
+        }
+
+        /* Controles de Quantidade */
+        .controle-quantidade {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            height: 36px;
+            overflow: hidden;
+        }
+
+        .botao-qtd {
+            background: white;
+            border: none;
+            width: 32px;
+            height: 100%;
+            font-size: 1.2rem;
+            color: #0086ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .botao-qtd:hover {
+            background-color: #f8f9fa;
+        }
+
+        .input-qtd {
+            width: 40px;
+            height: 100%;
+            border: none;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            outline: none;
+        }
+
+        .botao-remover {
+            background: none;
+            border: none;
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-left: 15px;
+        }
+
+        .botao-remover:hover {
+            color: #dc3545;
+        }
+
+        /* Preços no Item */
+        .preco-antigo {
+            font-size: 0.8rem;
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .preco-atual {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #333;
+        }
+
+        .parcelamento {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        /* Card Resumo (Lateral Fixo) */
+        .card-resumo {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            padding: 25px;
+            /* Configuração para ficar fixo ao rolar */
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 110px;
+            /* Distância do topo (considerando a navbar) */
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .titulo-resumo {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .linha-resumo {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .total-resumo {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .rotulo-total {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .valor-total {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #333;
+            line-height: 1;
+        }
+
+        .texto-pix {
+            color: #00d600;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .botao-finalizar {
+            background-color: #00d600;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            width: 100%;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+
+        .botao-finalizar:hover {
+            background-color: #00a000;
+        }
+
+        .botao-continuar {
+            background: white;
+            border: 1px solid #0086ff;
+            color: #0086ff;
+            width: 100%;
+            padding: 12px;
+            font-weight: 600;
+            border-radius: 6px;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .botao-continuar:hover {
+            background: #f0f8ff;
+        }
+    
